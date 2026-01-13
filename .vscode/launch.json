@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug TenantPlatformApplication",
+            "request": "launch",
+            "mainClass": "com.property.tenantplatform.TenantPlatformApplication",
+            "projectName": "tenant-platform",
+            "vmArgs": "-Dspring.profiles.active=dev"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+  "info": {
+    "name": "Tenant Platform API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Signup",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "url": {"raw": "{{baseUrl}}/api/auth/signup", "host": ["{{baseUrl}}"], "path": ["api","auth","signup"]},
+        "body": {"mode": "raw", "raw": "{\n  \"name\": \"Admin\",\n  \"email\": \"admin@example.com\",\n  \"password\": \"changeme123\",\n  \"role\": \"ADMIN\"\n}"}
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "url": {"raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api","auth","login"]},
+        "body": {"mode": "raw", "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"changeme123\"\n}"}
+      }
+    },
+    {
+      "name": "Create Property",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "Authorization", "value": "Bearer {{token}}"}
+        ],
+        "url": {"raw": "{{baseUrl}}/api/properties", "host": ["{{baseUrl}}"], "path": ["api","properties"]},
+        "body": {"mode": "raw", "raw": "{\n  \"name\": \"Unit 1\",\n  \"address\": \"123 Main\",\n  \"ownerName\": \"Owner\"\n}"}
+      }
+    },
+    {
+      "name": "Tenant Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {"key": "Authorization", "value": "Bearer {{token}}"}
+        ],
+        "url": {"raw": "{{baseUrl}}/api/tenants/me", "host": ["{{baseUrl}}"], "path": ["api","tenants","me"]}
+      }
+    }
+  ]
+}
